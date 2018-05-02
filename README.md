@@ -23,4 +23,5 @@
 $ npm install petrel-cli -g
 $ mkdir demo && cd demo
 $ yan-cli new
+$ npm start
 ```
