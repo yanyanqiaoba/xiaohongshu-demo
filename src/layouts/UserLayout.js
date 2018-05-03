@@ -4,30 +4,12 @@ import DocumentTitle from 'react-document-title';
 import { Icon } from 'antd';
 import GlobalFooter from '../components/GlobalFooter';
 import styles from './UserLayout.less';
-import logo from '../assets/logo.png';
+import logo from '../assets/xiaohongshu.png';
 import { getRoutes } from '../utils/utils';
-
-const links = [
-  {
-    key: 'help',
-    title: '帮助',
-    href: '',
-  },
-  {
-    key: 'privacy',
-    title: '隐私',
-    href: '',
-  },
-  {
-    key: 'terms',
-    title: '条款',
-    href: '',
-  },
-];
 
 const copyright = (
   <Fragment>
-    Copyright <Icon type="copyright" /> 2018 小红书 QA Team
+    Copyright <Icon type="copyright" /> 2018 小红书 QA Team Based On Ant Design Pro
   </Fragment>
 );
 
@@ -37,7 +19,7 @@ class UserLayout extends React.PureComponent {
     const { pathname } = location;
     let title = 'RED Design';
     if (routerData[pathname] && routerData[pathname].name) {
-      title = `${routerData[pathname].name} - Ant Design Pro`;
+      title = `${routerData[pathname].name} - RED`;
     }
     return title;
   }
@@ -49,12 +31,8 @@ class UserLayout extends React.PureComponent {
           <div className={styles.content}>
             <div className={styles.top}>
               <div className={styles.header}>
-                <Link to="/">
-                  <img alt="logo" className={styles.logo} src={logo} />
-                  <span className={styles.title}>Ant Design</span>
-                </Link>
+                  <span className={styles.title}>登录</span>
               </div>
-              <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范</div>
             </div>
             <Switch>
               {getRoutes(match.path, routerData).map(item => (
@@ -68,7 +46,7 @@ class UserLayout extends React.PureComponent {
               <Redirect exact from="/user" to="/user/login" />
             </Switch>
           </div>
-          <GlobalFooter links={links} copyright={copyright} />
+          <GlobalFooter copyright={copyright} />
         </div>
       </DocumentTitle>
     );
