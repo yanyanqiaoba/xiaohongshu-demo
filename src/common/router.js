@@ -70,6 +70,7 @@ function getFlatMenuData(menus) {
 
 export const getRouterData = app => {
   const routerConfig = {
+    // ${addRoute no delete!}
 
     '/': {
       component: dynamicWrapper(app, ['user', 'login'], () => import('../layouts/BasicLayout')),
