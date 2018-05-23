@@ -4,7 +4,8 @@
   "description": "A basic template of xiaohongshu QA's front end demo",
   "scripts": {
     "precommit": "npm run lint-staged",
-    "start": "cross-env ESLINT=none roadhog dev",
+    "dev": "cross-env ESLINT=none roadhog dev",
+    "start": "node node-server.js",
     "start:no-proxy": "cross-env NO_PROXY=true ESLINT=none roadhog dev",
     "build": "cross-env ESLINT=none roadhog build",
     "site": "roadhog-api-doc static && gh-pages -d dist",
