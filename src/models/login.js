@@ -12,13 +12,16 @@ export default {
 
   effects: {
     *login({ payload }, { call, put }) {
+      // todo 后端登录接口
       const response = yield call(fakeAccountLogin, payload);
+      // {"status":"ok","type":"account","currentAuthority":"admin"}
       yield put({
         type: 'changeLoginStatus',
         payload: response,
       });
       // Login successfully
       if (response.status === 'ok') {
+        window.history.go(0); // 强制重新加载页面
         reloadAuthorized();
         yield put(routerRedux.push('/'));
       }
@@ -36,7 +39,7 @@ export default {
           type: 'changeLoginStatus',
           payload: {
             status: false,
-            currentAuthority: 'guest',
+            currentAuthority: 'no-login',
           },
         });
         reloadAuthorized();
