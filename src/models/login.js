@@ -13,8 +13,8 @@ export default {
   effects: {
     *login({ payload }, { call, put }) {
       // todo 后端登录接口
-      const response = yield call(fakeAccountLogin, payload);
-      // {"status":"ok","type":"account","currentAuthority":"admin"}
+      // const response = yield call(fakeAccountLogin, payload);
+      const response = {"status":"ok","type":"account","currentAuthority":"admin"}
       yield put({
         type: 'changeLoginStatus',
         payload: response,

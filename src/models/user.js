@@ -17,7 +17,13 @@ export default {
       });
     },
     *fetchCurrent(_, { call, put }) {
-      const response = yield call(queryCurrent);
+      // const response = yield call(queryCurrent);
+      const response = {
+        "avatar": "https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png",
+        "name": "admin",
+        "notifyCount": 12,
+        "userid": "00000001",
+      };
       yield put({
         type: 'saveCurrentUser',
         payload: response,

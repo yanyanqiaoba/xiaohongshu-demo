@@ -38,7 +38,7 @@ const menuData = [
         path: 'page3',
       },
     ],
-  }
+  },
 ];
 
 function formatter(data, parentPath = '/', parentAuthority) {
